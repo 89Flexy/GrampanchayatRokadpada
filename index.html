@@ -557,31 +557,50 @@ color:#fff;
     <span>आरोग्य विभाग</span>  
   </a>  
   </div>  
-<div class="population-grid">
+<!-- LOKSANKHYA AAKDEWARI -->
+<div class="info-bar" id="population">
 
-  <div class="pop-card total">
-    <img class="pop-icon" src="https://cdn-icons-png.flaticon.com/512/476/476863.png">
-    <div class="pop-label">एकूण लोकसंख्या</div>
-    <div class="pop-number">5067</div>
+  <div class="info-title">
+    <span data-en="Population Statistics" data-mr="लोकसंख्या आकडेवारी">
+      लोकसंख्या आकडेवारी
+    </span>
+    <span class="toggle-btn" onclick="toggleInfo('populationBox', this)">−</span>
   </div>
 
-  <div class="pop-card male">
-    <img class="pop-icon" src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
-    <div class="pop-label">पुरुष</div>
-    <div class="pop-number">2588</div>
-  </div>
+  <div class="info-text" id="populationBox">
 
- <div class="pop-card female">
-    <img class="pop-icon" src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png">
-    <div class="pop-label">महिला</div>
-    <div class="pop-number">2479</div>
-  </div>
+    <div class="population-grid">
 
-<!-- 🏠 4th icon HOME -->
-<div class="pop-card families">
-  <img class="pop-icon" src="https://cdn-icons-png.flaticon.com/512/69/69524.png" alt="Home Icon" style="filter: invert(42%) sepia(44%) saturate(524%) hue-rotate(96deg) brightness(96%) contrast(92%);">
-  <div class="pop-label">कुटुंबांची संख्या</div>
-  <div class="pop-number">1042</div>
+      <div class="pop-card total">
+        <img class="pop-icon" src="https://cdn-icons-png.flaticon.com/512/476/476863.png">
+        <div class="pop-label">एकूण लोकसंख्या</div>
+        <div class="pop-number">5067</div>
+      </div>
+
+      <div class="pop-card families">
+        <img class="pop-icon" src="https://cdn-icons-png.flaticon.com/512/69/69524.png"
+             style="filter: invert(42%) sepia(44%) saturate(524%) hue-rotate(96deg) brightness(96%) contrast(92%);">
+        <div class="pop-label">कुटुंबांची संख्या</div>
+        <div class="pop-number">1042</div>
+      </div>
+
+      <div class="pop-card male">
+        <img class="pop-icon" src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+        <div class="pop-label">पुरुष</div>
+        <div class="pop-number">2588</div>
+      </div>
+
+      <div class="pop-card female">
+        <img class="pop-icon" src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png">
+        <div class="pop-label">महिला</div>
+        <div class="pop-number">2479</div>
+      </div>
+
+   
+
+    </div>
+
+  </div>
 </div>
 </div>
 <style>/* POPULATION GRID */
@@ -704,6 +723,42 @@ color:#fff;
 
   </div>  
   </div>  
+  <link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- GAVACHA NAKASHA -->
+<div class="info-bar" id="gavNakasha">
+  <div class="info-title">
+    <span data-en="Village Map" data-mr="गावाचा नकाशा">
+      <i class="fa-solid fa-location-dot"
+         style="margin-right:6px;color:#ff6600;"></i>
+      गावाचा नकाशा
+    </span>
+    <span class="toggle-btn" onclick="toggleInfo('mapBox', this)">−</span>
+  </div>
+
+  <div class="info-text" id="mapBox">
+
+    <div style="
+      width:100%;
+      max-width:1000px;
+      height:420px;
+      margin:10px auto;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 6px 18px rgba(0,0,0,0.2);
+    ">
+      <iframe
+        src="https://www.google.com/maps?q=Rokadpada,Surgana,Nashik,Maharashtra&output=embed"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+</div>
 <br>  
 <br>  
 
@@ -1018,5 +1073,6 @@ function googleTranslateElementInit() {
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>  
 </html>  
+
 
 
