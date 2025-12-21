@@ -1271,7 +1271,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(
     `
     section,
-    .info-bar,
+  
     .icon-item,
     .pop-card,
     .pad-card
@@ -1284,7 +1284,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (
       el.closest("header") ||          // top header images
       el.closest("footer") ||          // bottom navigation
-      el.classList.contains("gp-gallery")
+      el.classList.contains("info-bar")
     ) {
       return;
     }
