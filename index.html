@@ -834,7 +834,35 @@ color:#fff;
   background:#ff6600;
 }
 </style>
-  
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const gallery = document.getElementById("gpGallery");
+  if (!gallery) return;
+
+  const track = gallery.querySelector(".gp-track");
+  const slides = gallery.querySelectorAll(".gp-track img");
+  const prevBtn = gallery.querySelector(".gp-prev");
+  const nextBtn = gallery.querySelector(".gp-next");
+
+  let index = 0;
+
+  function showSlide(i) {
+    track.style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  });
+
+});
+</script> 
 <br>  
 <br>  
 
