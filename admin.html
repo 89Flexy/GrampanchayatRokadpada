@@ -19,6 +19,7 @@ body{
   padding:30px;
   width:340px;
   border-radius:12px;
+  position:relative;
 }
 .login-box h2{
   text-align:center;
@@ -46,12 +47,39 @@ button{
   text-align:center;
   margin-top:10px;
 }
+.cancel-btn{
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:36px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  cursor:pointer;
+  color:#777;
+  border-radius:50%;
+  transition:0.2s ease;
+  user-select:none;
+}
+
+.cancel-btn:hover{
+  background:#ffe5e5;
+  color:red;
+  transform:scale(1.1);
+}
+
+.cancel-btn:active{
+  transform:scale(0.95);
+}
 </style>
 </head>
 
 <body>
 
 <div class="login-box">
+<div class="cancel-btn" onclick="cancelLogin()" title="Cancel">✖</div>
   <h2>Admin Login</h2>
 
   <input type="text" id="user" placeholder="Username">
@@ -61,18 +89,13 @@ button{
   <div id="error"></div>
 </div>
 
-<!-- 🔊 Sound Effects -->
-<audio id="successSound">
-  <source src="success.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="errorSound">
-  <source src="error.mp3" type="audio/mpeg">
-</audio>
-
+<!-- 🔊 Sounds -->
+<audio id="successSound" src="success.mp3"></audio>
+<audio id="errorSound" src="error.mp3"></audio>
+<audio id="cancelSound" src="cancel.mp3"></audio>
 <script>
-const U = "TXVybGlkaGFy";            // Murlidhar
-const P = "TXVybGlkaGFyODlAMTk3Ng=="; // Murlidhar89@1976
+const U = "TXVybGlkaGFy";
+const P = "TXVybGlkaGFyODlAMTk3Ng==";
 
 function login(){
   const user = document.getElementById("user").value.trim();
@@ -90,6 +113,13 @@ function login(){
     document.getElementById("errorSound").play();
     error.innerText = "Wrong Username or Password";
   }
+}
+
+function cancelLogin(){
+  document.getElementById("cancelSound").play();
+  setTimeout(()=>{
+    window.location.href = "index.html";
+  }, 300);
 }
 </script>
 
