@@ -392,11 +392,6 @@ background:#dbeeff;
 transform:translateX(4px);
 }
 
-/* Language */
-.language{
-display:flex;
-gap:12px;
-}
 
 .language span{
 background:#e6f2ff;
@@ -512,9 +507,9 @@ color:#fff;
 </div>  
 <!-- LANGUAGE SWITCH BELOW SLIDER -->  
 <div class="slider-language">  
-  <button onclick="setLang('mr')">मराठी</button>  
-  <button onclick="setLang('en')">English</button>  
-  <button onclick="setLang('hi')">हिंदी</button>  
+  <button onclick="setLang('')">मराठी</button>  
+  <button onclick="setLang('')">English</button>  
+  <button onclick="setLang('')">हिंदी</button>  
 </div>  
 <div class="services-grid">    
 <!-- 1. गावाविषयी माहिती --> 
@@ -1026,28 +1021,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
   });
 });
 </script>
-<script>
-function setLang(lang){
-  const select = document.querySelector(".goog-te-combo");
-  if(!select){
-    alert("Translate loading... please wait");
-    return;
-  }
 
-  select.value = lang;
-  select.dispatchEvent(new Event("change"));
-
-  localStorage.setItem("siteLang", lang);
-}
-
-// Auto load saved language
-document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("siteLang");
-  if(savedLang){
-    setTimeout(()=>setLang(savedLang), 2000);
-  }
-});
-</script>
 <!-- FOOTER -->  
 <footer class="footer">  
   <div class="footer-top">  
@@ -1238,20 +1212,7 @@ document.addEventListener("DOMContentLoaded", () => {
   .bottom-nav{display:none;}  
 }  
 </style> 
-  <!-- GOOGLE TRANSLATE (HIDDEN) -->
-<div id="google_translate_element" style="display:none;"></div>
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'mr',   // तुमची default भाषा
-    includedLanguages: 'mr,en,hi',
-    autoDisplay: false
-  }, 'google_translate_element');
-}
-</script>
-
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <style>
 /* ===== GLOBAL SCROLL ANIMATION ===== */
 .reveal{
@@ -1309,6 +1270,7 @@ document.addEventListener("DOMContentLoaded", () => {
  
 </body>  
 </html>  
+
 
 
 
