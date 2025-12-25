@@ -8,7 +8,7 @@
 <link rel="icon" href="https://i.ibb.co/Y78mdhyG/20251220-142340.png" type="image/png">
 <title>Grampanchayat Rokadpada</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">  
-<link rel="manifest" href="manifest.json">
+
   <style>  
 
 *{margin:0;padding:0;box-sizing:border-box}  
@@ -1268,75 +1268,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
-  <script>
-let deferredPrompt;
-const installBox = document.getElementById("installBox");
-const closeBtn = document.getElementById("installClose");
-
-window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    installBox.style.display = "block"; // SHOW bar
-});
-
-// When user taps the bar anywhere → show install prompt
-installBox.addEventListener("click", async () => {
-    if (!deferredPrompt) return;
-
-    deferredPrompt.prompt();
-    const choice = await deferredPrompt.userChoice;
-
-    if (choice.outcome === "accepted") {
-        installBox.style.display = "none"; // HIDE after install
-    }
-
-    deferredPrompt = null;
-});
-
-// Close button X just hides the bar
-closeBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // prevent install popup on close tap
-    installBox.style.display = "none";
-});
-
-// Hide if already installed
-window.addEventListener("appinstalled", () => {
-    installBox.style.display = "none";
-});
-  </script>
- <div id="installBox" style="
-  position: fixed;
-  bottom: 70px; 
-  left: 0;
-  right: 0;
-  background: #111;
-  color: #b44bff;
-  padding: 14px;
-  text-align: center;
-  font-size: 16px;
-  border-top: 1px solid #333;
-  display: none;
-  z-index: 9999;
-">
-  <span style="color:#c86bff;">Install this site as an app</span>
-
-  <button id="installClose" style="
-    position:absolute;
-    right: 10px;
-    top: 10px;
-    background:none;
-    color:#fff;
-    border:none;
-    font-size:18px;
-  ">×</button>
- </div>
-  <script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js")
-    .then(() => console.log("SW registered"))
-    .catch(err => console.log("SW error", err));
-}
-  </script>
 </body>  
 </html>  
 
