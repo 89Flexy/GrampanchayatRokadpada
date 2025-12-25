@@ -1330,6 +1330,13 @@ window.addEventListener("appinstalled", () => {
     font-size:18px;
   ">×</button>
  </div>
+  <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js")
+    .then(() => console.log("SW registered"))
+    .catch(err => console.log("SW error", err));
+}
+  </script>
 </body>  
 </html>  
 
