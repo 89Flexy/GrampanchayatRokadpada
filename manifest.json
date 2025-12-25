@@ -1,18 +1,18 @@
 {
   "name": "Grampanchayat Rokadpada",
-  "short_name": "Grampanchayat Rokadpada",
+  "short_name": "Rokadpada",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "https://i.ibb.co/4wvXYPJx/20251225-154429.jpg",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "https://i.ibb.co/fdWxRtWn/20251225-154352.jpg",
       "sizes": "512x512",
       "type": "image/png"
     }
